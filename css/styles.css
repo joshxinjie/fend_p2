@@ -99,6 +99,37 @@ section {
     color: #fff;
 }
 
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50%;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:white;
+    color: gray;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    padding: 3px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
 /* Active Section */
 .active {
 	background-color: #00BFFF;
