@@ -20,6 +20,6 @@ For specific, detailed instructions, look at the project instructions in the Uda
 
 ## Functionalities
 
-The following functionalities are added to the starter code:
+The following functionalities were added to the starter code:
 1. Navigation bar - The navigation bar is dynamically built based on the number of sections in the page. When the user clicks on a navigation item, the item will scroll the user to the appropriate section. The section currently being viewed by the user will also be highlighted in the navigation bar, to distinguish it from others.
 2. Scroll to top button - A scroll to top button will be visible once the user scrolls to the last section of the page.
