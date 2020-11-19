@@ -72,7 +72,7 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: center;
-    background-color: #333;
+    background-color: #000;
     list-style-type: none;
     overflow: hidden;
 }
@@ -84,7 +84,7 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    background: #111;
+    background: #333;
     color: #fff;
     transition: ease 0.3s all;
 }
@@ -97,6 +97,12 @@ section {
 #navbar__list a {
     text-decoration: none;
     color: #fff;
+}
+
+/* Active Section */
+.active {
+	background-color: #00BFFF;
+	font-weight: bold;
 }
 
 /* Header Styles */
