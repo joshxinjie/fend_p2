@@ -14,10 +14,35 @@ function buildNavMenu() {
         let newLiTag = document.createElement("li");
         newLiTag.setAttribute("class", "menu__link");
         newLiTag.setAttribute("id", sectionID + "__link");
-        newLiTag.innerHTML = `<a href="#${sectionID}">${sectionTitle}</a>`;
+        newLiTag.setAttribute("href", `#${sectionID}`);
+        newLiTag.innerHTML = `<a>${sectionTitle}</a>`;
         navMenuFrag.appendChild(newLiTag);
     }
     navBarList.appendChild(navMenuFrag)
+}
+
+/**
+ * @description Scroll to the referenced section
+*/
+function scrollToSection(event) {
+    event.preventDefault();
+    const href = this.getAttribute("href");
+    
+    document.querySelector(href).scrollIntoView({
+        behavior: "smooth"
+  });
+}
+
+/**
+ * @description Add event listeners on each of the navigation bar's
+ * buttons to listen for clicks and scroll to the requested section
+*/
+function addScrolltoSectListeners() {
+    const navSectionBtn = document.querySelectorAll(".menu__link");
+
+    for (const navBtn of navSectionBtn) {
+        navBtn.addEventListener("click", scrollToSection);
+    }
 }
 
 /**
@@ -56,8 +81,9 @@ function getSectionInView() {
 }
 
 /**
- * @description Appends the 'active' class to the section that is currently
- * in view
+ * @description Appends the 'active-section' class to the section that is
+ * currently in view, as well as an 'active' class to the nav bar button 
+ * associated with the section
 */
 function makeViewedSectionActive() {
     sectionInView = getSectionInView()
@@ -66,9 +92,11 @@ function makeViewedSectionActive() {
         let sectionMenuLink = document.getElementById(sectionID + "__link");
         if (eachSection == sectionInView) {
             sectionMenuLink.classList.add("active");
+            eachSection.classList.add("active-section")
         }
         else {
             sectionMenuLink.classList.remove("active");
+            eachSection.classList.remove("active-section")
         }
     }
 }
@@ -103,6 +131,8 @@ function showTopBtn() {
 }
 
 buildNavMenu()
+
+addScrolltoSectListeners()
 
 document.addEventListener("scroll", makeViewedSectionActive);
 
